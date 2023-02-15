@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output Document</title>
+    <style>
+        body {
+            background-image: url(images/image-back);
+            background-color: black;
+            background-repeat: none;
+            background-size: cover;
+            position: relative;
+        }
+
+        div {
+            position: absolute;
+            top: 270px;
+            left: 420px;
+            font-size: 25px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div onload="catchData()">
+        <h1 id="output"></h1>
+    </div>
+    <script>
+        let first_name = localStorage.getItem("userFirstName");
+        let last_name = localStorage.getItem("userLastName");
+
+        let text = `Welcome ${first_name} ${last_name} `;
+
+        document.getElementById("output").innerHTML = text;
+
+    </script>
+</body>
+</html>
