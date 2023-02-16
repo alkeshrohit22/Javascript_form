@@ -37,22 +37,18 @@ function validationForm() {
         return false;
     }
 
+    // Extra Email Validation
+    var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (!email.match(emailFormat)) {
+        document.forms["userForm"]["email"].focus();
+        alert("Invalid Email given.");
+        return false;
+    }
+
     // password validation
     passwordRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     if (!passwordRegExp.test(password)) {
         alert('Invalid password given.');
-        return false;
-    }
-
-    // Extra Email Validation
-    var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (email.match(emailFormat)) {
-        document.forms["userForm"]["email"].focus();
-        return true;
-    }
-    else {
-        alert("You have entered an invalid email address!");
-        document.forms["userForm"]["email"].focus();
         return false;
     }
 
